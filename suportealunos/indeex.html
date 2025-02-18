@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte ao Estudante</title>
+    <link rel="stylesheet" href="fomrsup.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="header">
+            <h1>Central de Apoio ao Estudante</h1>
+        </div>
+        <div class="logo-container">
+            <img src="image.png" alt="Unifaveni" class="img">
+        </div>
+        
+        <div class="form-content">
+            <form id="whatsappForm">
+                <div class="form-group">
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail institucional:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="duvida">Descreva sua dúvida:</label>
+                    <textarea id="duvida" name="duvida" rows="5" required></textarea>
+                </div>
+
+                <button type="submit">ENVIAR SOLICITAÇÃO</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nome = encodeURIComponent(document.getElementById('nome').value);
+            const email = encodeURIComponent(document.getElementById('email').value);
+            const duvida = encodeURIComponent(document.getElementById('duvida').value);
+
+            const mensagem = `*Nome:* ${nome}%0A*E-mail:* ${email}%0A*Dúvida:* ${duvida}`;
+            const numeroWhatsApp = '+5511972949252'; 
+            
+            window.open(`https://wa.me/${numeroWhatsApp}?text=${mensagem}`, '_blank');
+        });
+    </script>
+</body>
+</html>

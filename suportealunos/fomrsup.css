@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-image: url('Cursos-de-faculdade.jpg'); /* Adiciona a imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir todo o fundo */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Fixa a imagem para evitar rolagem */
+    position: relative;
+}
+
+/* Overlay para melhorar a legibilidade do formulário */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(241, 245, 237, 0.8); /* Overlay com a cor de fundo original e transparência */
+    z-index: 0;
+}
+
+.container {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative; /* Garante que o conteúdo fique acima do overlay */
+    z-index: 1;
+}
+
+.header {
+    background: #507960;
+    padding: 25px;
+    text-align: center;
+}
+
+.header h1 {
+    color: white;
+    font-size: 1.0em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.logo-container {
+    text-align: center;
+    padding: 1px;
+    background: white;
+}
+
+.logo-container img {
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+.form-content {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #507960;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #a58d56;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #507960;
+    box-shadow: 0 0 5px rgba(80,121,96,0.3);
+}
+
+button {
+    background: #a58d56;
+    color: white;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #8a7448;
+    letter-spacing: 1px;
+}
