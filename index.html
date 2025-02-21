@@ -40,20 +40,19 @@
 
     <script>
 
-            // Verifica se o contador já existe no LocalStorage
-        if (localStorage.getItem('visitas')) {
-            var visitas = parseInt(localStorage.getItem('visitas'));
-        } else {
-            var visitas = 0;
-        }
+          // URL da API para incrementar e buscar o contador
+        const apiUrl = "https://api.countapi.xyz/hit/diegoavila99.github.io/suportealunos34d";
 
-        // Incrementa o contador
-        visitas++;
-        localStorage.setItem('visitas', visitas);
-
-        // Atualiza o contador na página
-        document.getElementById('contador').textContent = visitas;
-
+        // Faz uma requisição para a API
+        fetch(apiUrl)
+            .then(response => response.json()) // Converte a resposta para JSON
+            .then(data => {
+                // Atualiza o contador na página
+                document.getElementById('contador').textContent = data.value;
+            })
+            .catch(error => {
+                console.error("Erro ao carregar o contador:", error);
+            });
         
         document.getElementById('whatsappForm').addEventListener('submit', function(e) {
             e.preventDefault();
