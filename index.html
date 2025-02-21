@@ -39,6 +39,22 @@
     </div>
 
     <script>
+
+            // Verifica se o contador já existe no LocalStorage
+        if (localStorage.getItem('visitas')) {
+            var visitas = parseInt(localStorage.getItem('visitas'));
+        } else {
+            var visitas = 0;
+        }
+
+        // Incrementa o contador
+        visitas++;
+        localStorage.setItem('visitas', visitas);
+
+        // Atualiza o contador na página
+        document.getElementById('contador').textContent = visitas;
+
+        
         document.getElementById('whatsappForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
